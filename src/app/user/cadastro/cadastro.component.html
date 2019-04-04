@@ -1,0 +1,113 @@
+<div class="container-fluid mt-3">
+  <div class="ui-g-12">             
+    <div class="ui-g-8 ui-g-offset-2">      
+      <h2 style="text-align:center">Cadastro de Usuário</h2>       
+    </div>                 
+      <div class="ui-g-8 ui-g-offset-2">                 
+        <div class="ui-fieldset">                                      
+            <form [formGroup]="form" class="form mt-4">   
+            <div class='card'>                         
+                <p-card>    
+                    <h4>Dados do Usuário</h4>
+                    <div class="form-group ui-g">                             
+                        <label for="cpf" class="ui-g-1">CPF</label>           
+                        <input formControlName="cpf" class="form-control ui-g-2" pInputText id="cpf">                                                                 
+                        <label for="nome" class="ui-g-1">Nome</label>           
+                        <input formControlName="nome" class="form-control ui-g-3" pInputText id="nome">                                                                 
+                    </div>   
+                    
+                    <div class="form-group ui-g">                             
+                    
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="rg" class="ui-g-4">RG</label>           
+                        <input formControlName="rg" class="form-control ui-g-3" pInputText id="rg">                                                                 
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="email" class="ui-g-4">E-mail</label>           
+                        <input formControlName="email" class="form-control ui-g-3" pInputText id="email">                                                                 
+                    </div>
+                    
+                    <div class="form-group ui-g">                             
+                        <label for="confirmaemail" class="ui-g-4">Confirme o e-mail</label>           
+                        <input formControlName="confirmaemail" class="form-control ui-g-3" pInputText id="confirmaemail">                                                                 
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="senha" class="ui-g-4">Senha</label>           
+                        <input formControlName="senha" type="password" class="form-control ui-g-3" pPassword id="senha">                                                                 
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="confirmasenha" class="ui-g-4">Confirme a senha</label>           
+                        <input formControlName="confirmasenha" type="password" class="form-control ui-g-3" id="confirmasenha">                                                                 
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="cpffile" class="ui-g-4">Anexar documento com CPF</label>           
+                        <p-fileUpload name="demo[]" id="cpffile" accept="image/*" auto=true customUpload="true" (uploadHandler)="onUpload($event)"></p-fileUpload>
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="selectDocumento" class="ui-g-4">Tipo de Documento</label>           
+                        <p-dropdown [options]="tiposDocumento" formControlName="documentoSelecionado" id="selectDocumento"></p-dropdown>
+                    </div>
+                </p-card>
+            </div>
+            <div class='card'>
+                <p-card>
+                    <h4>Endereço do Usuário</h4>
+                    <div class="form-group ui-g">                             
+                        <label for="logradouro" class="ui-g-4">Logradouro</label>           
+                        <input formControlName="logradouro" class="form-control ui-g-3" pInputText id="logradouro">                                                                 
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="numero" class="ui-g-1">Número</label>           
+                        <input formControlName="numero" class="form-control ui-g-1" pInputText id="numero">                                                                 
+                        <label for="complemento" class="ui-g-2">Complemento</label>
+                        <input formControlName="complemento" class="form-control ui-g-3" pInputText id="complemento">                                                                 
+                    </div>    
+
+                    <div class="form-group ui-g">                             
+                        <label for="bairro" class="ui-g-4">Bairro</label>           
+                        <input formControlName="bairro" class="form-control ui-g-3" pInputText id="bairro">                                                                 
+                    </div>
+
+                    <div class="form-group ui-g">                             
+                        <label for="cep" class="ui-g-1">CEP</label>           
+                        <input formControlName="cep" class="form-control ui-g-1" pInputText id="cep">                                                                 
+                        <label for="municipio" class="ui-g-2">Município</label>
+                        <p-dropdown  [options]="municipios" placeholder="Selecione um município" formControlName="municipio" optionLabel="nome" id="municipio"></p-dropdown >
+                    </div>   
+
+                    
+                    </p-card>   
+                </div> 
+                <div class='card'>
+                    <p-card>
+                        <h4>Telefone do Usuário</h4>
+                        <div class="form-group ui-g">                             
+                            <label for="celular" class="ui-g-4">Celular</label>           
+                            <input formControlName="celular" class="form-control ui-g-3" pInputText id="celular">                                                                 
+                        </div>       
+                        
+                        <div class="form-group ui-g">                             
+                            <label for="telefone" class="ui-g-4">Telefone</label>           
+                            <input formControlName="telefone" class="form-control ui-g-3" pInputText id="telefone">                                                                 
+                        </div>                                    
+                    </p-card>   
+                </div>                                                                                                                                             
+            </form>   
+            <p-toolbar>
+                <div class="ui-toolbar-group-left">                      
+                    <button pButton type="button" label="Salvar" style="margin-right: 2px" (click)="salvar()"></button>
+                    <button pButton type="button" label="Cancelar"></button>
+                </div>                 
+            </p-toolbar>  
+        </div>                                     
+      </div>                                            
+  </div>                
+</div>

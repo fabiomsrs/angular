@@ -1,0 +1,28 @@
+<div class="container-fluid mt-3">
+  <div class="ui-g-12">                              
+      <div class="ui-g-6 ui-g-offset-3">   
+              <p-card>    
+              <h2>Login</h2>                                                       
+                <div class="ui-fieldset">
+                    <form [formGroup]="form" class="form mt-4">                            
+                        <div class="form-group ui-g">                             
+                            <label for="cpf" class="ui-g-4">CPF</label>           
+                            <input formControlName="cpf" class="form-control ui-g-3" pInputText id="cpf">                                                                 
+                        </div>   
+                        
+                        <div class="form-group ui-g">                             
+                          <label for="password" class="ui-g-4">Password</label>           
+                          <input formControlName="senha" type="password" class="form-control ui-g-3" id="password">                                                                 
+                      </div> 
+                    </form>                
+                </div>                                                                                                 
+              </p-card>
+              <p-toolbar>
+                  <div class="ui-toolbar-group-left">
+                      <button pButton type="button" label="Login" (click)="login()" style="margin-right: 2px"></button>
+                      <button pButton type="button" label="Cadastre-se"></button>
+                  </div>
+              </p-toolbar>  
+      </div>                                            
+  </div>                
+</div>
